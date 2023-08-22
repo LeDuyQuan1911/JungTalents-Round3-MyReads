@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { search } from "../BooksAPI";
 import Books from "./Books";
 
-function SearchBookResult({ title, numberOfBook }) {
+function SearchBookResult({ title, numberOfBooks }) {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
     let isMounted = true;
   
     if (title !== "") {
-      search(title, numberOfBook)
+      search(title, numberOfBooks)
         .then((res) => {
           if (isMounted) {
             setBooks(res);
@@ -25,7 +25,7 @@ function SearchBookResult({ title, numberOfBook }) {
     return () => {
       isMounted = false;
     };
-  }, [title, numberOfBook]);
+  }, [title, numberOfBooks]);
   
   return (
     <div className="search-books-results">

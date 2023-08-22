@@ -6,25 +6,8 @@ function Books({shelf,search}){
 
   const [books,setBooks] = useState([])
 
-  // const handleShelfChange = (book, newShelf) => {
-  //   update(book, newShelf).then((res) => {
-  //     // Cập nhật lại danh sách sách sau khi thay đổi type sách
-  //     setBooks((prevBooks) => {
-  //       const updatedBooks = prevBooks.map((b) => {
-  //         if (b.id === book.id) {
-  //           return { ...b, shelf: newShelf };
-  //         }
-  //         return b;
-  //       });
-  //       return updatedBooks;
-  //     });
-  //   });
-  // };
   const handleShelfChange = (book, newShelf) => {
     update(book, newShelf)
-      .then(() => {
-        window.location.reload(); 
-      })
       .catch((error) => {
         console.log(error);
       });
@@ -38,7 +21,7 @@ function Books({shelf,search}){
       .catch((error) => {
         console.log(error);
       });
-  },[]); 
+  }); 
     
 
       

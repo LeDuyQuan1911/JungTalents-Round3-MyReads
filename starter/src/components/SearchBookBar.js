@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function SearchBookBar(){
 
   const [title, setTitle] = useState("");
-  const [numberOfBook, setNumberOfBook] = useState(20);
+  const [numberOfBooks, setNumberOfBooks] = useState(20);
   return(
     <>
           <div className="search-books-bar">
@@ -23,7 +23,7 @@ function SearchBookBar(){
             </div>
           </div>
           
-    <SearchBookResult title={title} numberOfBook={numberOfBook}></SearchBookResult>
+    <SearchBookResult title={title} numberOfBooks={numberOfBooks}></SearchBookResult>
         </>
     )
 }
